@@ -1,10 +1,10 @@
-export default function Movie(props){
+export default function Movie({ title, rating, studio }) {
     return (
-        <article>
-            <h4>Title: {props.data.title}</h4>
-            <p>Rating: {props.data.rating}</p>
-            <p>Studio: {props.data.studio}</p>
-        </article>
+        <li>
+            <h4>{title}</h4>
+            <p>{rating}</p>
+            <p>{studio}</p>
+        </li>
     );
 }
 

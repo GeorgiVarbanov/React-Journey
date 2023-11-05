@@ -1,13 +1,21 @@
 import Movie from "./Movie.jsx";
 
 export default function MovieList(props) {
+    const movies = props.movies;
+
     return (
         <div>
             <h2>{props.headingText}</h2>
             <ul>
-            <li><Movie data={props.movies[0]}/></li>
-            <li><Movie data={props.movies[1]}/></li>
-            <li><Movie data={props.movies[2]}/></li>
+                {movies.map((movie, i) => (
+                    <Movie
+                        key={i}
+                        title = {movie.title}
+                        rating = {movie.rating}
+                        studio = {movie.studio}
+                    />
+                ))}
+
             </ul>
         </div>
     );
