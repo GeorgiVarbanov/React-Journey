@@ -1,6 +1,16 @@
+import * as userService from "../services/userService.js";
 import UserListItem from "./UserListItem.jsx";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Table = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        //add try catch for error
+        userService.getAll().then(result => setUsers(result));
+    }, []);
+
     return (
         <table className="table">
             <thead>
@@ -59,9 +69,11 @@ const Table = () => {
             </thead>
 
             <tbody>
-                <UserListItem />
+                {users.map(user => 
+                    <UserListItem key={user._id}{...user}/>
+                    )}
             </tbody>
-            
+
         </table>
     )
 }
