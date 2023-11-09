@@ -1,12 +1,18 @@
 import Footer from "../components/Footer.jsx"
+import Header from "../components/Header.jsx"
+import UserList from "../components/UserList.jsx"
 
 
 function App() {
 
   return (
     <>
-
-    <Footer />
+      <Header />
+      <main className="main">
+        <UserList />
+        
+      </main>
+      <Footer />
     </>
   )
 }
