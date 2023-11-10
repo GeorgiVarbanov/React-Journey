@@ -11,6 +11,10 @@ const Table = () => {
         userService.getAll().then(result => setUsers(result));
     }, []);
 
+    const createUserClickHandler = () => {
+        
+    }
+
     return (
         <table className="table">
             <thead>
@@ -69,11 +73,11 @@ const Table = () => {
             </thead>
 
             <tbody>
-                {users.map(user => 
-                    <UserListItem key={user._id}{...user}/>
-                    )}
+                {users.map(user =>
+                    <UserListItem key={user._id}{...user} />
+                )}
             </tbody>
-
+            <button className="btn-add btn" onClick={createUserClickHandler}>Add new user</button>
         </table>
     )
 }

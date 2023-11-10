@@ -7,7 +7,7 @@ const Section = () => {
             <section className="card users-container">
                 <Searchbar />
                 <Table />
-                <button className="btn-add btn">Add new user</button>
+                
             </section>
         </div>
     )

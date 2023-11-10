@@ -1,7 +1,6 @@
 import { formatIsoDate } from "../utils/dateUtils.js"
 
 const UserListItem = ({
-    _id,
     firstName,
     lastName,
     email,
