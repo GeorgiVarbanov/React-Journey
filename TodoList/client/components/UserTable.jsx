@@ -1,15 +1,19 @@
 import * as userService from "../services/userService.js";
 import CreateUserModal from "./CreateUserModal.jsx";
 import UserListItem from "./UserListItem.jsx";
+import UserInfoModal from "./UserInfoModal.jsx";
 import { useEffect } from "react";
 import { useState } from "react";
 
 const Table = () => {
     const [users, setUsers] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
+    const [showInfo, setShowInfo] = useState(false);
+
+
     useEffect(() => {
         userService.getAll()
-        then(result => setUsers(result))
+        .then(result => setUsers(result))
             .catch(err => console.log(err));
     }, []);
 
@@ -28,14 +32,24 @@ const Table = () => {
         const newUser = await userService.create(data);
 
         setUsers(state => [...state, newUser]);
-        
+
         setShowCreate(false);
+    }
+
+    const userInfoClickHandler = (e) => {
+        console.log(e.target);
     }
 
     return (
         <div className="table-wrapper">
 
-            {showCreate && <CreateUserModal hideModal={hideCreateModal} onUserCreate={userCreateHandler} />}
+            {showCreate && <CreateUserModal
+                hideModal={hideCreateModal}
+                onUserCreate={userCreateHandler}
+
+            />}
+
+            {showInfo && <UserInfoModal onClick={() => setShowInfo(false)} />}
 
             <table className="table">
                 <thead>
@@ -95,7 +109,7 @@ const Table = () => {
 
                 <tbody>
                     {users.map(user =>
-                        <UserListItem key={user._id}{...user} />
+                        <UserListItem key={user._id}{...user} onUserInfoClick={userInfoClickHandler} />
                     )}
                 </tbody>
             </table>
