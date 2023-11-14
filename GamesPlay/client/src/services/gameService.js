@@ -18,5 +18,7 @@ export const create = async (gameData) => {
 };
 
 export const getAll = async() => {
-    await request("GET", baseUrl);
+    const result = await request("GET", baseUrl);
+
+    return Object.values(result)
 };
