@@ -5,7 +5,7 @@ import Home from "./componets/Home/Home.jsx";
 import Catalogue from "./componets/Catalogue/Catalogue.jsx";
 import Login from "./componets/Login/Login.jsx";
 import Register from "./componets/Register/Register.jsx";
-import Create from "./componets/Catalogue/CreateGame/Create.jsx";
+import Create from "./componets/CreateGame/Create.jsx";
 
 function App() {
 

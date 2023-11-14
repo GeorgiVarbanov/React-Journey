@@ -10,7 +10,6 @@ const Game = (props) => {
                 <h2>Zombie lang</h2>
                 <a href="#" className="details-button">Details</a>
             </div>
-
         </div>
     )
 }

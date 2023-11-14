@@ -9,7 +9,6 @@ const Catalogue = () => {
                         <h2>Cover Fire</h2>
                         <a href="#" className="details-button">Details</a>
                 </div>
-
             </div>
             <h3 className="no-articles">No articles yet</h3>
         </section>
